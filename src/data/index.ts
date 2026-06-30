@@ -1,0 +1,12 @@
+/** Barrel for all dummy data. Swap these modules for CMS/API responses later. */
+export { navItems } from './navigation'
+export { sports, sportGalleries, getSport } from './sports'
+export { heroSlides } from './heroSlides'
+export { events, upcomingEvents, pastEvents, getEvent, featuredEvent } from './events'
+export { leaderboard, standings, getStandings, getCategory } from './leaderboard'
+export { mediaItems } from './media'
+export { gameModes, fanLeaderboard, rewards, shareTargets, eventRewards, referralRewardPoints } from './gamification'
+export type { RedeemReward } from './gamification'
+export { partners, ecosystemStats, communityChannels } from './community'
+export { reels, instagramHandle, instagramUrl } from './reels'
+export type { Reel } from './reels'

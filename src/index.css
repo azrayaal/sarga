@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+
+  ::selection {
+    @apply bg-race text-white;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Condensed uppercase section title (MotoGP-style) */
+  .h-section {
+    @apply font-display text-3xl font-extrabold uppercase tracking-tight text-ink sm:text-4xl;
+  }
+
+  /* Small uppercase eyebrow / kicker */
+  .kicker {
+    @apply inline-flex items-center gap-2 font-display text-xs font-bold uppercase tracking-[0.2em] text-race;
+  }
+
+  /* Metadata byline (date · source) */
+  .byline {
+    @apply font-display text-[11px] font-semibold uppercase tracking-[0.12em] text-ink-500;
+  }
+
+  /* "View more" editorial link with arrow */
+  .view-more {
+    @apply inline-flex items-center gap-1.5 font-display text-sm font-bold uppercase tracking-[0.14em] text-ink transition hover:text-race;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
