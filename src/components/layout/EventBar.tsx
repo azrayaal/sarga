@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { events } from '@/data'
 import { useCountdown } from '@/hooks/useCountdown'
-import { partners } from '@/data'
+// import { partners } from '@/data'
 import { SmartImage } from '../ui/SmartImage'
 import { asset } from '@/lib/utils'
 
@@ -22,7 +22,7 @@ export function EventBar() {
   }, [])
 
   const t = useCountdown(next.date)
-  const sponsor = partners[0]
+  // const sponsor = partners[0]
 
   return (
     <div className="sticky top-0 z-40 border-b border-white/10 bg-night text-white">
