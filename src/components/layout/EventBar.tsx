@@ -39,10 +39,10 @@ export function EventBar() {
         </Link>
 
         {/* Presenting sponsor */}
-        <span className="hidden items-center gap-2 font-display text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 lg:flex">
+        {/* <span className="hidden items-center gap-2 font-display text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 lg:flex">
           Presented by
           <span className="text-white/80">{sponsor?.name ?? 'SARGA'}</span>
-        </span>
+        </span> */}
 
         {/* Countdown */}
         <div className="flex shrink-0 items-center gap-2.5">
