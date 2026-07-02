@@ -14,7 +14,7 @@ export function News() {
   return (
     <section id="news" className="bg-paper py-14 sm:py-20">
       <div className="container-page">
-        <SectionHeading kicker="Latest" title="SARGA News" moreLabel="All News" moreHref="#news" />
+        <SectionHeading kicker="Latest" title="SARGA News" moreLabel="All News" moreHref="https://news.sarga.co/id" />
 
         <div className="mt-8 grid gap-8 lg:grid-cols-12">
           {/* Lead feature */}
