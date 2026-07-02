@@ -2,6 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Horse-racing micro-site brand fonts (per SARGA Horse Sport brand guide):
+ *   Display → Stadmitte   Body → Masifa
+ * Self-hosted; drop the files in `public/assets/fonts/`. Until then the stack
+ * falls back to the site's Anton / Inter so nothing breaks.
+ */
+@font-face {
+  font-family: 'Stadmitte';
+  src: url('/assets/fonts/stadmitte.woff2') format('woff2'),
+       url('/assets/fonts/stadmitte.woff') format('woff');
+  font-weight: 400 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Masifa';
+  src: url('/assets/fonts/masifa.woff2') format('woff2'),
+       url('/assets/fonts/masifa.woff') format('woff');
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+/* Scope the brand fonts to the horse-racing micro-site only. */
+.sport-site--horse {
+  font-family: 'Masifa', 'Inter', system-ui, sans-serif;
+}
+.sport-site--horse h1,
+.sport-site--horse h2,
+.sport-site--horse h3,
+.sport-site--horse h4,
+.sport-site--horse .font-mega,
+.sport-site--horse .font-display {
+  font-family: 'Stadmitte', 'Anton', 'Saira Condensed', system-ui, sans-serif;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;

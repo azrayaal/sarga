@@ -16,10 +16,12 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* Standalone, self-chromed per-sport micro-sites (own nav/footer). */}
+        <Route path="sports/:id" element={<SportDetailPage />} />
+
         <Route element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="sports" element={<SportsPage />} />
-          <Route path="sports/:id" element={<SportDetailPage />} />
           <Route path="events" element={<EventsPage />} />
           <Route path="events/:id" element={<EventDetailPage />} />
           <Route path="leaderboard" element={<LeaderboardPage />} />

@@ -1,6 +1,8 @@
 /** Barrel for all dummy data. Swap these modules for CMS/API responses later. */
 export { navItems } from './navigation'
 export { sports, sportGalleries, getSport } from './sports'
+export { sportThemes, getSportTheme, NEWS_SITE_URL } from './sportThemes'
+export type { SportTheme, SportPalette, BrandSwatch } from './sportThemes'
 export { heroSlides } from './heroSlides'
 export { events, upcomingEvents, pastEvents, getEvent, featuredEvent } from './events'
 export { leaderboard, standings, getStandings, getCategory } from './leaderboard'
