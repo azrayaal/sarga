@@ -5,7 +5,11 @@ import { EventsPage } from '@/pages/EventsPage'
 import { EventDetailPage } from '@/pages/EventDetailPage'
 import { LeaderboardPage } from '@/pages/LeaderboardPage'
 import { SportsPage } from '@/pages/SportsPage'
-import { SportDetailPage } from '@/pages/SportDetailPage'
+import { HorseRacingPage } from '@/pages/sports/horse-racing'
+import { RallycrossPage } from '@/pages/sports/rallycross'
+import { MotorsportPage } from '@/pages/sports/motorsport'
+import { ChampionshipPage } from '@/pages/sports/championship'
+import { CommunityPage } from '@/pages/sports/community'
 import { NotFoundPage } from '@/pages/NotFoundPage'
 
 /**
@@ -17,7 +21,11 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         {/* Standalone, self-chromed per-sport micro-sites (own nav/footer). */}
-        <Route path="sports/:id" element={<SportDetailPage />} />
+        <Route path="sports/horse-racing" element={<HorseRacingPage />} />
+        <Route path="sports/rallycross" element={<RallycrossPage />} />
+        <Route path="sports/motorsport" element={<MotorsportPage />} />
+        <Route path="sports/championship" element={<ChampionshipPage />} />
+        <Route path="sports/community" element={<CommunityPage />} />
 
         <Route element={<Layout />}>
           <Route index element={<HomePage />} />

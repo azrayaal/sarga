@@ -1,13 +1,10 @@
 import type { SportId } from '@/types'
-import { cn } from '@/lib/utils'
+import { asset, cn } from '@/lib/utils'
 
 /** Simple line glyphs that give each sport category a distinct identity. */
-const paths: Record<SportId, JSX.Element> = {
+const paths: Partial<Record<SportId, JSX.Element>> = {
   'horse-racing': (
     <path d="M3 18c2-6 5-8 9-8 1.5 0 2.5-.5 3.5-1.5L18 6l3 1-1.5 2.5c-.7 1-1 2-1 3.2 0 1.8.5 3 1.5 5.3M7 18l1-3M14 18l1.5-4" />
-  ),
-  rallycross: (
-    <path d="M3 13l2-4a2 2 0 0 1 1.8-1.2h6.3c.6 0 1.2.3 1.6.8L18 12l2 .6a1.5 1.5 0 0 1 1 1.4V16a1 1 0 0 1-1 1h-1M6 17H4a1 1 0 0 1-1-1v-3M8 17h7M7.5 17a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zM18.5 17a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
   ),
   motorsport: (
     <path d="M5 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM19 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM8 13h5l2-3h2M11 10l-1 3M6.5 10 9 7h3" />
@@ -20,7 +17,17 @@ const paths: Record<SportId, JSX.Element> = {
   ),
 }
 
+/** Sports whose icon is a raster logo (from public/assets/logos) instead of a glyph. */
+const logos: Partial<Record<SportId, string>> = {
+  rallycross: asset('logos/motorsport.png'),
+}
+
 export function SportIcon({ sport, className }: { sport: SportId; className?: string }) {
+  const logo = logos[sport]
+  if (logo) {
+    // Wide wordmark: size by height, let width flow (w-auto) so it isn't squished short.
+    return <img src={logo} alt="" className='h-40'/>
+  }
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className={cn('h-6 w-6', className)}>
       {paths[sport]}

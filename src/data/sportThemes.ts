@@ -46,7 +46,7 @@ export interface SportTheme {
   heroTitle: string[]
   heroLede: string
   mode: 'light' | 'dark'
-  heroVariant: 'editorial' | 'kinetic' | 'tech' | 'prestige' | 'festival'
+  heroVariant: 'editorial' | 'kinetic' | 'tech' | 'prestige' | 'festival' | 'f1'
   palette: SportPalette
   /** Signature CSS gradient string. */
   gradient: string
@@ -109,28 +109,28 @@ export const sportThemes: Record<SportId, SportTheme> = {
     brand: 'SARGA Rallycross',
     domain: 'rallycross.sarga.co',
     kicker: 'Dirt · Drift · Adrenaline',
-    heroTitle: ['Four', 'Surfaces.', 'One Winner.'],
+    heroTitle: ['Four Surfaces.', 'One', 'Winner.'],
     heroLede:
       'Wheel-to-wheel mixed-surface racing built for short, explosive heats — gravel, tarmac, mud and the joker lap that changes everything.',
     mode: 'dark',
-    heroVariant: 'kinetic',
+    heroVariant: 'f1',
     palette: {
-      bg: '#141009',
-      panel: '#1E1810',
-      line: '#332818',
-      brand: '#FF7A00',
-      brand2: '#FFC400',
-      accent: '#E8DFA0',
-      ink: '#FBF6EC',
-      muted: '#B7A98E',
-      onBrand: '#161009',
+      bg: '#15151E',
+      panel: '#1D1D25',
+      line: '#38383F',
+      brand: '#E10600',
+      brand2: '#B60009',
+      accent: '#E10600',
+      ink: '#FFFFFF',
+      muted: '#B0B2BA',
+      onBrand: '#FFFFFF',
     },
-    gradient: 'linear-gradient(105deg,#FF7A00 0%,#FFC400 100%)',
+    gradient: 'linear-gradient(120deg,#FF1801 0%,#C1000A 100%)',
     about: {
       heading: 'Short heats. Full send.',
       paragraphs: [
-        'SARGA Rallycross is the loudest, dirtiest corner of the ecosystem — a format engineered for chaos, where every heat is a sprint and the joker lap keeps the result alive until the final metre.',
-        'Cars slide across four surfaces in a single lap while packed crowds sit metres from the action. It’s motorsport with the volume turned all the way up.',
+        'SARGA Rallycross is the loudest, most explosive corner of the ecosystem — a format engineered for chaos, where every heat is a sprint and the joker lap keeps the result alive until the final metre.',
+        'Cars slide across four surfaces in a single lap while packed crowds sit metres from the action. Broadcast with telemetry-rich, edge-of-the-seat coverage — it’s racing with the volume turned all the way up.',
       ],
       pillars: [
         { value: '16', label: 'Heats', sub: 'per round' },
@@ -139,11 +139,11 @@ export const sportThemes: Record<SportId, SportTheme> = {
       ],
     },
     swatches: [
-      { hex: '#FF7A00', name: 'Blaze' },
-      { hex: '#FFC400', name: 'Hazard' },
-      { hex: '#141009', name: 'Mud Black' },
-      { hex: '#E8DFA0', name: 'Dust' },
-      { hex: '#B7A98E', name: 'Gravel' },
+      { hex: '#E10600', name: 'Race Red' },
+      { hex: '#15151E', name: 'Carbon' },
+      { hex: '#38383F', name: 'Steel' },
+      { hex: '#B0B2BA', name: 'Silver' },
+      { hex: '#FFFFFF', name: 'Snow' },
     ],
     newsCategories: ['Rallycross'],
   },

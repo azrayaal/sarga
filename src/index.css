@@ -36,6 +36,31 @@
   font-family: 'Stadmitte', 'Anton', 'Saira Condensed', system-ui, sans-serif;
 }
 
+/*
+ * Rallycross micro-site brand fonts (SARGA Motorsport / F1-style guide):
+ *   Display → Owners Wide   Body → Noto Sans
+ * Owners Wide is self-hosted (drop the file in `public/assets/fonts/`);
+ * Noto Sans loads from Google Fonts (see index.html). Falls back gracefully.
+ */
+@font-face {
+  font-family: 'Owners Wide';
+  src: url('/assets/fonts/owners-wide.woff2') format('woff2'),
+       url('/assets/fonts/owners-wide.woff') format('woff');
+  font-weight: 400 900;
+  font-display: swap;
+}
+.sport-site--rally {
+  font-family: 'Noto Sans', 'Inter', system-ui, sans-serif;
+}
+.sport-site--rally h1,
+.sport-site--rally h2,
+.sport-site--rally h3,
+.sport-site--rally h4,
+.sport-site--rally .font-mega,
+.sport-site--rally .font-display {
+  font-family: 'Owners Wide', 'Anton', 'Saira Condensed', system-ui, sans-serif;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
