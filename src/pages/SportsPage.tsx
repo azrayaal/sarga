@@ -29,11 +29,18 @@ export function SportsPage() {
         <div className="grid gap-6 lg:grid-cols-2">
           {sports.map((sport) => {
             const isRallycross = sport.id === 'rallycross'
+            const isMotorsport = sport.id === 'motorsport'
 
             return (
               <Link
                 key={sport.id}
-                to={isRallycross ? 'https://sarga-rallycross-livid.vercel.app/' : `/sports/${sport.id}`}
+                  to={
+                    isRallycross
+                      ? 'https://sarga-rallycross-livid.vercel.app/'
+                      : isMotorsport
+                      ? 'https://sarga-motorsport.vercel.app/'
+                      : `/sports/${sport.id}`
+                  }
                 target={isRallycross ? '_blank' : undefined}
                 rel={isRallycross ? 'noopener noreferrer' : undefined}
                 className="group relative overflow-hidden rounded-md border border-line bg-night"
