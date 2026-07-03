@@ -15,47 +15,49 @@ export const sports: Sport[] = [
     image: cover('horse-racing'),
     accent: 'text-flame-400',
     stat: { label: 'Races / season', value: '120+' },
+    url: 'https://sarga-horse.vercel.app/',
   },
-  {
-    id: 'rallycross',
-    name: 'Rallycross',
-    tagline: 'Dirt, drift & adrenaline',
-    description:
-      'Wheel-to-wheel mixed-surface racing built for short, explosive heats and roaring crowds across four surfaces.',
-    image: cover('rallycross'),
-    accent: 'text-flame-500',
-    stat: { label: 'Heats / round', value: '16' },
-  },
+  // {
+  //   id: 'rallycross',
+  //   name: 'Rallycross',
+  //   tagline: 'Dirt, drift & adrenaline',
+  //   description:
+  //     'Wheel-to-wheel mixed-surface racing built for short, explosive heats and roaring crowds across four surfaces.',
+  //   image: cover('rallycross'),
+  //   accent: 'text-flame-500',
+  //   stat: { label: 'Heats / round', value: '16' },
+  // },
   {
     id: 'motorsport',
     name: 'Motorsport',
     tagline: 'Pure track speed',
     description:
       'Circuit racing, time-attack and the SARGA Speed Series — precision engineering at full throttle under the lights.',
-    image: cover('motorsport'),
+    image: cover('rallycross'),
     accent: 'text-flame-500',
     stat: { label: 'Top speed', value: '290km/h' },
+    url: 'https://sarga-motorsport.vercel.app/',
   },
-  {
-    id: 'championship',
-    name: 'Championship',
-    tagline: 'The road to the crown',
-    description:
-      'Season-long points battles across every SARGA discipline, decided under the lights at the Grand Final.',
-    image: cover('championship'),
-    accent: 'text-flame-600',
-    stat: { label: 'Title rounds', value: '9' },
-  },
-  {
-    id: 'community',
-    name: 'Community & Festival',
-    tagline: 'Where fans become the show',
-    description:
-      'Fan zones, festivals, fun-games and grassroots meetups that turn race weekends into full ecosystem experiences.',
-    image: cover('community'),
-    accent: 'text-flame-400',
-    stat: { label: 'Fans / event', value: '40k+' },
-  },
+  // {
+  //   id: 'championship',
+  //   name: 'Championship',
+  //   tagline: 'The road to the crown',
+  //   description:
+  //     'Season-long points battles across every SARGA discipline, decided under the lights at the Grand Final.',
+  //   image: cover('championship'),
+  //   accent: 'text-flame-600',
+  //   stat: { label: 'Title rounds', value: '9' },
+  // },
+  // {
+  //   id: 'community',
+  //   name: 'Community & Festival',
+  //   tagline: 'Where fans become the show',
+  //   description:
+  //     'Fan zones, festivals, fun-games and grassroots meetups that turn race weekends into full ecosystem experiences.',
+  //   image: cover('community'),
+  //   accent: 'text-flame-400',
+  //   stat: { label: 'Fans / event', value: '40k+' },
+  // },
 ]
 
 /** Extra per-sport gallery imagery for the sport detail pages. */

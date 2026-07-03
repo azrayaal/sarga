@@ -22,6 +22,7 @@ export interface Sport {
   /** Tailwind text/utility accent kept per-sport for subtle differentiation. */
   accent: string
   stat: { label: string; value: string }
+  url?: string
 }
 
 export interface NavItem {

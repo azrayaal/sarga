@@ -28,21 +28,18 @@ export function SportsPage() {
       <section className="container-page py-12 sm:py-16">
         <div className="grid gap-6 lg:grid-cols-2">
           {sports.map((sport) => {
-            const isRallycross = sport.id === 'rallycross'
-            const isMotorsport = sport.id === 'motorsport'
+           
 
             return (
               <Link
                 key={sport.id}
                   to={
-                    isRallycross
-                      ? 'https://sarga-rallycross-livid.vercel.app/'
-                      : isMotorsport
-                      ? 'https://sarga-motorsport.vercel.app/'
+                    sport.url
+                      ? sport.url
                       : `/sports/${sport.id}`
                   }
-                target={isRallycross ? '_blank' : undefined}
-                rel={isRallycross ? 'noopener noreferrer' : undefined}
+                target={sport.url ? '_blank' : undefined}
+                rel={sport.url ? 'noopener noreferrer' : undefined}
                 className="group relative overflow-hidden rounded-md border border-line bg-night"
               >
                 <div className="relative aspect-[16/9] overflow-hidden">

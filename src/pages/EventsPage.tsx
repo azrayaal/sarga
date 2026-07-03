@@ -11,10 +11,10 @@ type Kind = 'upcoming' | 'past'
 const sportFilters: { value: SportId | 'all'; label: string }[] = [
   { value: 'all', label: 'All' },
   { value: 'horse-racing', label: 'Horse Racing' },
-  { value: 'rallycross', label: 'Rallycross' },
+  // { value: 'rallycross', label: 'Rallycross' },
   { value: 'motorsport', label: 'Motorsport' },
-  { value: 'championship', label: 'Championship' },
-  { value: 'community', label: 'Community' },
+  // { value: 'championship', label: 'Championship' },
+  // { value: 'community', label: 'Community' },
 ]
 
 export function EventsPage() {
