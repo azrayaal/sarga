@@ -215,3 +215,85 @@ export interface Partner {
   name: string
   logo: string
 }
+
+/* ── Festival ─────────────────────────────────────────────────────────── */
+
+export interface FestivalExperience {
+  id: string
+  title: string
+  description: string
+  /** Icon key resolved by the page's local icon map. */
+  icon: string
+  image: string
+}
+
+export interface FestivalAct {
+  id: string
+  name: string
+  genre: string
+  time: string
+  image: string
+  /** Marks the marquee headliner. */
+  headliner?: boolean
+}
+
+export interface FestivalEdition {
+  year: string
+  name: string
+  city: string
+  attendance: string
+  image: string
+}
+
+/* ── Rising Star ──────────────────────────────────────────────────────── */
+
+export interface RisingStar {
+  id: string
+  name: string
+  discipline: SportId
+  sportLabel: string
+  age: number
+  region: string
+  image: string
+  achievement: string
+  stat: { label: string; value: string }
+  /** Program spotlight rank (1 = top prospect). */
+  rank: number
+}
+
+/* ── Venues ───────────────────────────────────────────────────────────── */
+
+export type VenueType = 'racetrack' | 'circuit' | 'arena' | 'festival-ground'
+
+export interface Venue {
+  id: string
+  name: string
+  city: string
+  type: VenueType
+  typeLabel: string
+  capacity: string
+  surface: string
+  image: string
+  description: string
+  /** Human label for hosted events, e.g. "24 events / yr". */
+  events: string
+  featured?: boolean
+}
+
+/* ── Sarga Tech ───────────────────────────────────────────────────────── */
+
+export interface TechProduct {
+  id: string
+  name: string
+  category: string
+  description: string
+  /** Icon key resolved by the page's local icon map. */
+  icon: string
+  features: string[]
+  highlight?: boolean
+}
+
+export interface TechStat {
+  label: string
+  value: string
+}

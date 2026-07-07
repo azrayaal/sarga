@@ -5,7 +5,7 @@ import { asset, cn } from '@/lib/utils'
 import { Button } from '@/components/ui/Button'
 import { SmartImage } from '@/components/ui/SmartImage'
 
-export function Navbar() {
+export function Navbar({ barOpen = true }: { barOpen?: boolean }) {
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
@@ -16,7 +16,7 @@ export function Navbar() {
   }, [open])
 
   return (
-    <header className="sticky top-11 z-30 border-b border-line bg-paper/95 backdrop-blur">
+    <header className={cn('sticky z-30 border-b border-line bg-paper/95 backdrop-blur transition-[top] duration-200', barOpen ? 'top-11' : 'top-0')}>
       <nav className="container-page flex h-16 items-center justify-between gap-6 lg:h-[72px]">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
@@ -27,12 +27,12 @@ export function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden items-center gap-7 lg:flex">
+        <div className="hidden items-center gap-x-5 xl:flex">
           {navItems.map((item) => (
             <Link
               key={item.label}
               to={item.href}
-              className="font-display text-sm font-bold uppercase tracking-[0.08em] text-ink-700 transition hover:text-race"
+              className="whitespace-nowrap font-display text-sm font-bold uppercase tracking-[0.06em] text-ink-700 transition hover:text-race"
             >
               {item.label}
             </Link>
@@ -47,10 +47,10 @@ export function Navbar() {
               <path d="M21 21l-4.3-4.3" />
             </svg>
           </button>
-          <Link to="/#community" className="hidden font-display text-sm font-bold uppercase tracking-[0.08em] text-ink-500 transition hover:text-ink lg:inline">
+          <Link to="/#community" className="hidden font-display text-sm font-bold uppercase tracking-[0.08em] text-ink-500 transition hover:text-ink xl:inline">
             Login
           </Link>
-          <Button asChildHref="#events" size="sm" className="hidden sm:inline-flex">
+          <Button asChildHref="/events" size="sm" className="hidden sm:inline-flex">
             Register Event
           </Button>
 
@@ -59,7 +59,7 @@ export function Navbar() {
             aria-label="Toggle menu"
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="grid h-10 w-10 place-items-center rounded-sm border border-line lg:hidden"
+            className="grid h-10 w-10 place-items-center rounded-sm border border-line xl:hidden"
           >
             <div className="space-y-1.5">
               <span className={cn('block h-0.5 w-5 bg-ink transition', open && 'translate-y-2 rotate-45')} />
@@ -73,7 +73,7 @@ export function Navbar() {
       {/* Mobile menu */}
       <div
         className={cn(
-          'overflow-hidden bg-paper transition-[max-height] duration-300 lg:hidden',
+          'overflow-hidden bg-paper transition-[max-height] duration-300 xl:hidden',
           open ? 'max-h-[80vh] border-t border-line' : 'max-h-0',
         )}
       >
@@ -88,7 +88,7 @@ export function Navbar() {
               {item.label}
             </Link>
           ))}
-          <Button asChildHref="#events" className="my-4 w-full" size="lg">
+          <Button asChildHref="/events" className="my-4 w-full" size="lg">
             Register Event
           </Button>
         </div>

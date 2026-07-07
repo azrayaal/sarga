@@ -6,6 +6,11 @@ import { EventDetailPage } from '@/pages/EventDetailPage'
 import { LeaderboardPage } from '@/pages/LeaderboardPage'
 import { SportsPage } from '@/pages/SportsPage'
 import { SportDetailPage } from '@/pages/SportDetailPage'
+import { MediaPage } from '@/pages/MediaPage'
+import { FestivalPage } from '@/pages/FestivalPage'
+import { RisingStarPage } from '@/pages/RisingStarPage'
+import { VenuesPage } from '@/pages/VenuesPage'
+import { SargaTechPage } from '@/pages/SargaTechPage'
 import { NotFoundPage } from '@/pages/NotFoundPage'
 
 /**
@@ -23,6 +28,11 @@ export default function App() {
           <Route path="events" element={<EventsPage />} />
           <Route path="events/:id" element={<EventDetailPage />} />
           <Route path="leaderboard" element={<LeaderboardPage />} />
+          <Route path="media" element={<MediaPage />} />
+          <Route path="festival" element={<FestivalPage />} />
+          <Route path="rising-star" element={<RisingStarPage />} />
+          <Route path="venues" element={<VenuesPage />} />
+          <Route path="sarga-tech" element={<SargaTechPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>

@@ -1,10 +1,32 @@
+import { Link } from 'react-router-dom'
 import { asset } from '@/lib/utils'
 import { partners } from '@/data'
 import { SmartImage } from '@/components/ui/SmartImage'
 
-const ecosystem = ['Horse Racing', 'Rallycross', 'Motorsport', 'Championship', 'Community', 'Media']
-const company = ['About SARGA', 'Careers', 'Newsroom', 'Partnerships', 'Venue Operations']
-const support = ['Help Center', 'Buy Tickets', 'Register Event', 'Contact', 'FAQ']
+type FooterLink = { label: string; href?: string }
+
+const ecosystem: FooterLink[] = [
+  { label: 'Sports', href: '/sports' },
+  { label: 'Events', href: '/events' },
+  { label: 'Media', href: '/media' },
+  { label: 'Festival', href: '/festival' },
+  { label: 'Rising Star', href: '/rising-star' },
+  { label: 'Venues', href: '/venues' },
+]
+const company: FooterLink[] = [
+  { label: 'About SARGA' },
+  { label: 'Careers' },
+  { label: 'Newsroom' },
+  { label: 'Partnerships' },
+  { label: 'Sarga Tech', href: '/sarga-tech' },
+]
+const support: FooterLink[] = [
+  { label: 'Help Center' },
+  { label: 'Buy Tickets', href: '/events' },
+  { label: 'Register Event', href: '/events' },
+  { label: 'Leaderboard', href: '/leaderboard' },
+  { label: 'FAQ' },
+]
 const socials = ['Instagram', 'YouTube', 'TikTok', 'X', 'Facebook']
 
 export function Footer() {
@@ -69,14 +91,18 @@ export function Footer() {
   )
 }
 
-function FooterCol({ title, links }: { title: string; links: string[] }) {
+function FooterCol({ title, links }: { title: string; links: FooterLink[] }) {
   return (
     <div>
       <h4 className="mb-4 font-display text-sm font-bold uppercase tracking-[0.1em]">{title}</h4>
       <ul className="space-y-2.5">
-        {links.map((l) => (
-          <li key={l}><a href="#" className="text-sm text-white/55 transition hover:text-race">{l}</a></li>
-        ))}
+        {links.map((l) =>
+          l.href ? (
+            <li key={l.label}><Link to={l.href} className="text-sm text-white/55 transition hover:text-race">{l.label}</Link></li>
+          ) : (
+            <li key={l.label}><a href="#" className="text-sm text-white/55 transition hover:text-race">{l.label}</a></li>
+          ),
+        )}
       </ul>
     </div>
   )

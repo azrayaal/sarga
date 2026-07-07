@@ -12,7 +12,7 @@ const pad = (n: number) => n.toString().padStart(2, '0')
  * MotoGP-style fixed event bar: next event + dates on the left, presenting
  * sponsor in the center, live countdown on the right.
  */
-export function EventBar() {
+export function EventBar({ open, onClose }: { open: boolean; onClose: () => void }) {
   const next = useMemo(() => {
     const now = Date.now()
     const upcoming = [...events]
@@ -23,6 +23,8 @@ export function EventBar() {
 
   const t = useCountdown(next.date)
   // const sponsor = partners[0]
+
+  if (!open) return null
 
   return (
     <div className="sticky top-0 z-40 border-b border-white/10 bg-night text-white">
@@ -57,6 +59,18 @@ export function EventBar() {
               <span className="font-display text-[9px] font-bold uppercase tracking-widest text-white/45">{u.l}</span>
             </div>
           ))}
+
+          {/* Close */}
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close event bar"
+            className="ml-1 grid h-6 w-6 shrink-0 place-items-center rounded-sm text-white/45 transition hover:bg-white/10 hover:text-white"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" className="h-3.5 w-3.5">
+              <path d="M6 6l12 12M18 6L6 18" />
+            </svg>
+          </button>
         </div>
       </div>
     </div>
